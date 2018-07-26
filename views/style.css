@@ -8,8 +8,12 @@ h1 {
     padding-bottom: 5px;
     border-bottom: 1px rgb(103, 121, 139) dotted;
 }
-p, label {
+p, label, a {
     color: rgb(103, 121, 139);
+}
+
+a:hover {
+    color: rgb(59, 81, 105);
 }
 
 input {

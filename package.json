@@ -4,6 +4,7 @@
   "description": "Deeper into Routing with Express",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.15.2",
     "pug": "^2.0.3"
   },

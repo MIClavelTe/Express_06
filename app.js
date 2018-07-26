@@ -14,6 +14,9 @@ app.get('/cards', (req,res) => {
 app.get('/student', (req,res) => {
     res.render('student');
 });
+app.post('/student', (req,res) => {
+    res.render('student');
+});
 
 
 app.listen(4000, () => {

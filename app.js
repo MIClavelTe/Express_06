@@ -1,6 +1,8 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express()
 
+app.use(bodyParser.urlencoded({ extended: false}));
 app.set('view engine', 'pug');
 
 app.get('/', (req,res) => {
@@ -15,7 +17,9 @@ app.get('/student', (req,res) => {
     res.render('student');
 });
 app.post('/student', (req,res) => {
-    res.render('student');
+    var user = req.body.user;
+    // console.log(user);
+    res.render('student', {user: user});
 });
 
 

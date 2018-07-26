@@ -2,8 +2,13 @@ extends layout.pug
 
 block content
     section#content
-        h2 Welcome, Student!
+        //- h2 Welcome, Student!
+        if user 
+            h2 Welcome, #{user}!
+        else
+            h2 Welcome, Student!
+
         form(action="/student", method="post")
             label Enter name:
                 input(type="text", name="user")
-            button(type="submit") Submit
+            button(type="submit") Submit 

@@ -1,0 +1,11 @@
+extends layout.pug
+
+block content
+    section#content
+    h3= prompt
+        if hint 
+            p 
+                i Hint: #{hint}
+        else
+            p 
+                i (No hint)

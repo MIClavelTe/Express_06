@@ -1,0 +1,13 @@
+body {
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: rgb(59, 81, 105);
+}
+
+h1 {
+    color: rgb(59, 81, 105);
+    padding-bottom: 5px;
+    border-bottom: 1px rgb(103, 121, 139) dotted;
+}
+p {
+    color: rgb(103, 121, 139);
+}

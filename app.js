@@ -10,7 +10,7 @@ app.get('/', (req,res) => {
 });
 
 app.get('/cards', (req,res) => {
-    res.render('cards', {prompt: "What's the smallest animal on Earth?", hint: "The animal lives deep under the ocean"});
+    res.render('cards', {prompt: "What's the smallest animal on Earth?"});
 });
 
 app.get('/student', (req,res) => {

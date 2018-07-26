@@ -8,8 +8,7 @@ block content
             a(href="http://localhost:4000/cards") Play Flash Cards!
         else
             h2 Welcome, Student!
-
-        form(action="/student", method="post")
-            label Enter name:
-                input(type="text", name="user")
-            button(type="submit") Submit 
+            form(action="/student", method="post")
+                label Enter name:
+                    input(type="text", name="user")
+                button(type="submit") Submit 

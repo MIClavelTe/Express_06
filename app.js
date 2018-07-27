@@ -12,6 +12,7 @@ const hints = ["It lives in the ocean", "Number from 100 - 1000", "Less than 1 f
 const answers = ['Water Bear', "400", "2 cm", ]
 
 app.use(bodyParser.urlencoded({ extended: false}));
+app.use(cookieParser());
 app.set('view engine', 'pug');
 
 app.get('/', (req,res) => {
@@ -28,12 +29,12 @@ app.post('/cards', (req,res) => {
 });
 
 app.get('/student', (req,res) => {
-    res.render('student');
+    res.render('student', {user: req.cookies.user});
 });
-app.post('/index', (req,res) => {
+app.post('/student', (req,res) => {
     var user = req.body.user;
-    res.cookie('Student', user)
-    res.render('index', {student: user});
+    res.cookie('user', user)
+    res.render('student', {user: user});
 });
 
 

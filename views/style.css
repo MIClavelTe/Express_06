@@ -24,14 +24,16 @@ input {
 }
 
 button {
-    background: rgb(26, 53, 75);
+    background: rgb(38, 123, 192);
     color: white;
+    font-size: 1rem;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-weight: lighter;
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 4px;
+    border: 1px solid rgb(38, 123, 192);
     margin: 5px;
-    font-size: 1.2rem;
-    font-weight: lighter;
 }

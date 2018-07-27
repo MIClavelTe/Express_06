@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const app = express()
 
 const questions = ["What's the smallest animal on Earth?", "How many legs does a milipede have?",
@@ -31,6 +32,7 @@ app.get('/student', (req,res) => {
 });
 app.post('/index', (req,res) => {
     var user = req.body.user;
+    res.cookie('Student', user)
     res.render('index', {student: user});
 });
 

@@ -9,7 +9,12 @@ block content
                 h3 Which animal is immortal?
                 p
                     i Hint: It's the only immortal creature
+                h3 
+                    i Answer: Immortal Jellyfish
             if hint 
                 p 
                     i Hint: #{hint}
+            if answer 
+                h3 
+                    i Answer: #{answer}
             button(type="submit") Next

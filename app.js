@@ -16,7 +16,12 @@ app.use(cookieParser());
 app.set('view engine', 'pug');
 
 app.get('/', (req,res) => {
-    res.render('index');
+    var username = req.cookies.user
+    if (username) {
+        res.render('index', {user: username});
+    } else {
+        res.redirect('/student');
+    }
 });
 
 app.get('/cards', (req,res) => {
@@ -29,7 +34,12 @@ app.post('/cards', (req,res) => {
 });
 
 app.get('/student', (req,res) => {
-    res.render('student', {user: req.cookies.user});
+    var username = req.cookies.user
+    if (username) {
+        res.redirect('/');
+    } else {
+        res.render('student', {user: username});
+    }
 });
 app.post('/student', (req,res) => {
     var user = req.body.user;

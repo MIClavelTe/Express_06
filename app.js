@@ -8,8 +8,10 @@ app.use(cookieParser());
 app.set('view engine', 'pug');
 
 const mainRoute = require('./routes/index');
+const cardRoute = require('./routes/cards');
 
 app.use(mainRoute);
+app.use('/cards', cardRoute);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');

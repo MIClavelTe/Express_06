@@ -15,15 +15,6 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
 app.set('view engine', 'pug');
 
-app.use((req, res, next) => {
-    console.log('Hello');
-    next();
-});
-app.use((req, res, next) => {
-    console.log('World!');
-    next();
-});
-
 app.get('/', (req,res) => {
     var username = req.cookies.user
     if (username) {
@@ -58,6 +49,17 @@ app.post('/student', (req,res) => {
     var user = req.body.user;
     res.cookie('user', user)
     res.render('student', {user: user});
+});
+
+app.use((req, res, next) => {
+  const err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+app.use((err, req, res, next) => {
+  res.locals.error = err;
+  res.status(err.status);
+  res.render('error');
 });
 
 

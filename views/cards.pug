@@ -3,18 +3,10 @@ extends layout.pug
 block content
     section#content
         form(action="/cards", method="post")
-            if prompt
-                h3= prompt
-            else   
-                h3 Which animal is immortal?
-                p
-                    i Hint: It's the only immortal creature
-                h3 
-                    i Answer: Immortal Jellyfish
+            h3= prompt
             if hint 
                 p 
                     i Hint: #{hint}
-            if answer 
-                h3 
-                    i Answer: #{answer}
+            h3 
+                i Answer: #{answer}
             button(type="submit") Next

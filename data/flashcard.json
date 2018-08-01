@@ -1,0 +1,52 @@
+{
+    "data": {
+        "title": "Animal FlashCards",
+        "cards": [
+            {
+                "question": "What's the smallest animal on Earth?",
+                "hint": "It lives in the ocean",
+                "answer": "Water Bear"
+            },
+            {
+                "question": "How many legs does a milipede have?",
+                "hint": "Number from 100 - 1000",
+                "answer": "400"
+            },
+            {
+                "question": "How big is a baby kangaroo?",
+                "hint": "Less than 1 foot",
+                "answer": "2 cm"
+            },
+            {
+                "question": "What's the loudest animal in the world?",
+                "hint": "It can't walk or fly",
+                "answer": "Sperm Whale"
+            },
+            {
+                "question": "How fast can a cheetah run?",
+                "hint": "Number from 10 - 200",
+                "answer": "70 mph"
+            },
+            {
+                "question": "What's the longest living animal?",
+                "hint": "It's a warm-blooded mammal",
+                "answer": "Bowhead Whale"
+            },
+            {
+                "question": "How many times can a woodpecker peck per sec?",
+                "hint": "Number from 1 - 50",
+                "answer": "20 times"
+            },
+            {
+                "question": "How many years old can a mouse be?",
+                "hint": "Number from 1 - 30",
+                "answer": "2 years"
+            },
+            {
+                "question": "Which animal is immortal?",
+                "hint": "Turtles eat them",
+                "answer": "Immortal Jellyfish"
+            }
+        ]
+    }
+}

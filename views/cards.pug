@@ -2,11 +2,10 @@ extends layout.pug
 
 block content
     section#content
-        form(action="/cards", method="post")
+        if prompt
             h3= prompt
-            if hint 
-                p 
-                    i Hint: #{hint}
+            p 
+                i Hint: #{hint}
+        if answer
             h3 
                 i Answer: #{answer}
-            button(type="submit") Next

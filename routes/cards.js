@@ -4,19 +4,18 @@ const { data } = require('../data/flashcard.json');
 const { cards } = data;
 
 router.get('/:id', (req, res) => {
-    res.render('cards', { 
-        prompt: cards[req.params.id].question,
-        hint: cards[req.params.id].hint,
-        answer: cards[req.params.id].answer
-    });
-});
+    const { side } = req.query;
+    const { id } = req.params;
+    const prompt = cards[id][side];
+    const { hint } = cards[id];
+    var data = {prompt}
 
-router.post('/:id', (req, res) => {
-    res.render('cards', { 
-        prompt: cards[req.params.id].question,
-        hint: cards[req.params.id].hint,
-        answer: cards[req.params.id].answer
-    });
+    if (side == "question") {
+        data.hint = hint
+        res.render('cards', data);
+    }
+
+    res.render('cards', data);
 });
 
 module.exports = router;

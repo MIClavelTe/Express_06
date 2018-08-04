@@ -8,11 +8,15 @@ router.get('/:id', (req, res) => {
     const { id } = req.params;
     const prompt = cards[id][side];
     const { hint } = cards[id];
-    var data = {prompt}
+    var data = {id, prompt}
 
     if (side == "question") {
         data.hint = hint
-        res.render('cards', data);
+        data.side = 'answer'
+        data.showSide = 'Answer'
+    } else if (side == "answer") {
+        data.side = 'question'
+        data.showSide = "Question"
     }
 
     res.render('cards', data);

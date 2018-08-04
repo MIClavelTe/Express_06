@@ -4,13 +4,19 @@ const { data } = require('../data/flashcard.json');
 const { cards } = data;
 
 router.get('/', (req, res) => {
-    var random = Math.floor(Math.random() * 9);
-    res.redirect(`/cards/${random}?side=question`);
+    var length = cards.length
+    var random = Math.floor(Math.random() * length);
+    res.redirect(`/cards/${random}`);
 });
 
 router.get('/:id', (req, res) => {
     const { side } = req.query;
     const { id } = req.params;
+
+    if (!side) {
+        res.redirect(`/cards/${id}?side=question`);
+    }
+
     const prompt = cards[id][side];
     const { hint } = cards[id];
     var data = {id, prompt}
@@ -22,6 +28,11 @@ router.get('/:id', (req, res) => {
     } else if (side == "answer") {
         data.side = 'question'
         data.showSide = "Question"
+    } else if (side == "hint") {
+        data.prompt = ""
+        data.hint = hint;
+        data.side = "answer"
+        data.showSide = "Answer"
     }
 
     res.render('cards', data);

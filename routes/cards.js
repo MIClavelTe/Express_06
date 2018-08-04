@@ -17,9 +17,10 @@ router.get('/:id', (req, res) => {
         res.redirect(`/cards/${id}?side=question`);
     }
 
+    var user = req.cookies.user;
     const prompt = cards[id][side];
     const { hint } = cards[id];
-    var data = {id, prompt}
+    var data = {id, prompt, user}
 
     if (side == "question") {
         data.hint = hint

@@ -6,8 +6,9 @@ html(lang="en")
         include style.css
   body
     include include/header.pug
-    h2 Welcome, #{user}!
-      form(action="/bye", method="post") 
-        button(type="submit") Log Out
+    if user
+      h2 Welcome, #{user}!
+        form(action="/bye", method="post") 
+          button(type="submit") Log Out
     block content 
     include include/footer.pug

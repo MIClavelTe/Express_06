@@ -1,2 +1,2 @@
-# *Express_05*
-Parameters, Query Strings, and Modularizing Routes
+# *Express_06*
+Serving Static Files in Express

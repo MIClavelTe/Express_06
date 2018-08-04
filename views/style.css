@@ -23,7 +23,7 @@ input {
     border: 1px solid rgb(148, 166, 185);
 }
 
-button {
+button, .button {
     background: rgb(38, 123, 192);
     color: white;
     font-size: 1rem;

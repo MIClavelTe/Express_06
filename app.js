@@ -5,6 +5,9 @@ const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false}));
 app.use(cookieParser());
+app.use('/styles', express.static('styles'));
+app.use('/html', express.static('html'));
+app.use('/html', express.static('html/stylesheets'));
 app.set('view engine', 'pug');
 
 const mainRoute = require('./routes/index');
